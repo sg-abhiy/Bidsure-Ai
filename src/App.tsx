@@ -741,6 +741,8 @@ export default function App() {
         isOpen={isStartFreshModalOpen}
         onClose={() => setIsStartFreshModalOpen(false)}
         onConfirm={handleStartFresh}
+        onConfirmStartFresh={handleStartFresh}
+        onClearCurrentDocsOnly={() => handleClearAllDocuments('all')}
         currentProject={selectedProject}
       />
     </div>

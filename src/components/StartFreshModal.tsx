@@ -13,27 +13,31 @@ import {
 } from 'lucide-react';
 import { Project } from '../types';
 
+export interface StartFreshDetails {
+  name: string;
+  tenderId: string;
+  organization: string;
+  bidderName: string;
+  bidderGstin: string;
+  tenderDeadline?: string;
+  description?: string;
+  createNewProject: boolean;
+}
+
 interface StartFreshModalProps {
   isOpen: boolean;
   onClose: () => void;
   currentProject: Project;
-  onConfirmStartFresh: (details: {
-    name: string;
-    tenderId: string;
-    organization: string;
-    bidderName: string;
-    bidderGstin: string;
-    tenderDeadline?: string;
-    description?: string;
-    createNewProject: boolean;
-  }) => void;
-  onClearCurrentDocsOnly: () => void;
+  onConfirm?: (details: StartFreshDetails) => void;
+  onConfirmStartFresh?: (details: StartFreshDetails) => void;
+  onClearCurrentDocsOnly?: () => void;
 }
 
 export const StartFreshModal: React.FC<StartFreshModalProps> = ({
   isOpen,
   onClose,
   currentProject,
+  onConfirm,
   onConfirmStartFresh,
   onClearCurrentDocsOnly,
 }) => {
@@ -68,7 +72,7 @@ export const StartFreshModal: React.FC<StartFreshModalProps> = ({
       return;
     }
 
-    onConfirmStartFresh({
+    const details: StartFreshDetails = {
       name: name.trim(),
       tenderId: tenderId.trim(),
       organization: organization.trim() || 'Procurement Authority',
@@ -77,7 +81,13 @@ export const StartFreshModal: React.FC<StartFreshModalProps> = ({
       tenderDeadline,
       description: description.trim(),
       createNewProject: asNewProject,
-    });
+    };
+
+    if (typeof onConfirm === 'function') {
+      onConfirm(details);
+    } else if (typeof onConfirmStartFresh === 'function') {
+      onConfirmStartFresh(details);
+    }
     onClose();
   };
 
@@ -227,7 +237,9 @@ export const StartFreshModal: React.FC<StartFreshModalProps> = ({
             <button
               type="button"
               onClick={() => {
-                onClearCurrentDocsOnly();
+                if (typeof onClearCurrentDocsOnly === 'function') {
+                  onClearCurrentDocsOnly();
+                }
                 onClose();
               }}
               className="text-rose-600 hover:text-rose-800 font-semibold inline-flex items-center gap-1 hover:underline cursor-pointer"
