@@ -673,9 +673,9 @@ export default function App() {
             <span>— AI-Powered Integrated Bid Compliance Verification Platform</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
-            <span>Smart India Hackathon 2026</span>
+            <span>Public & Enterprise Procurement Edition</span>
             <span>•</span>
-            <span>Problem Statement SIH26100</span>
+            <span>GFR 2017 & GeM Aligned</span>
             <span>•</span>
             <button
               onClick={() => setCurrentTab('report')}

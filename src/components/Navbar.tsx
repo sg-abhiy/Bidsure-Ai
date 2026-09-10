@@ -38,17 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40 shadow-sm print:hidden">
-      {/* Top Banner with GeM/SIH info */}
-      <div className="bg-slate-950 px-4 py-1.5 text-xs text-slate-400 border-b border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
-        <div className="flex items-center gap-2">
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800">
-            SIH 2026 Prototype
-          </span>
-          <span className="text-slate-300 font-medium">Problem Statement SIH26100</span>
-          <span className="text-slate-500">|</span>
-          <span className="text-slate-400">Integrated Bid Compliance Verification for GeM Procurement</span>
-        </div>
-        <div className="flex items-center gap-3">
+      {/* Top Banner */}
+      <div className="bg-slate-950 px-4 py-1.5 text-xs text-slate-400 border-b border-slate-800/80 flex flex-wrap justify-end items-center gap-3">
+        <div className="flex items-center gap-3 ml-auto">
           <div className="flex items-center gap-1 text-[11px] text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-800/60">
             <Sparkles className="w-3 h-3 text-amber-400" />
             <span>Hybrid Verification (Deterministic Rules + Gemini AI)</span>
@@ -68,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={onResetDemo}
             disabled={isResetting}
             className="flex items-center gap-1 text-slate-300 hover:text-white transition-colors text-xs font-medium cursor-pointer"
-            title="Reset to official SIH sample project"
+            title="Reset to sample demo project"
           >
             <RefreshCw className={`w-3 h-3 ${isResetting ? 'animate-spin' : ''}`} />
             <span>{isResetting ? 'Resetting...' : 'Load Sample Demo'}</span>

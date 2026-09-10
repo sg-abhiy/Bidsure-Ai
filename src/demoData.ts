@@ -23,7 +23,7 @@ export const CLEAN_BLANK_PROJECT: Project = {
 };
 
 export const DEMO_PROJECT: Project = {
-  id: 'proj-sih26100-demo',
+  id: 'proj-gem-demo',
   name: 'Supply of Industrial Safety Equipment & Smart Protective Gear',
   tenderId: 'GEM/2026/B/9821430',
   organization: 'NTPC Limited (Ministry of Power / Central PSU)',
@@ -57,7 +57,7 @@ export const DEMO_PROJECT: Project = {
 export const DEMO_DOCUMENTS: DocumentItem[] = [
   {
     id: 'doc-t-01',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'GeM_Tender_Notice_GEM2026B9821430.pdf',
     category: 'tender',
     type: 'PDF',
@@ -93,7 +93,7 @@ All delivered items must be backed by a comprehensive, non-derogable, 60-month o
   },
   {
     id: 'doc-t-02',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'Technical_Specifications_Schedule_A.pdf',
     category: 'tender',
     type: 'PDF',
@@ -120,7 +120,7 @@ Test reports older than 24 months from the tender submission deadline shall be d
   },
   {
     id: 'doc-b-01',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'Audited_Balance_Sheet_Schedule_3.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -154,7 +154,7 @@ CA. Rajesh K. Singhania, Senior Partner (M. No: 088219) • UDIN: 25088219AAAAAF
   },
   {
     id: 'doc-b-02',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'CA_Networth_Turnover_Certificate.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -185,7 +185,7 @@ Date: 15-Jan-2026 | UDIN: 25088219AKLM9912 | ICAI Reg: 014289N`
   },
   {
     id: 'doc-b-03',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'Past_Performance_Certificates.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -219,7 +219,7 @@ Total Cumulative Operational Commercial Experience as on Bid Due Date: 2 Years 1
   },
   {
     id: 'doc-b-04',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'GST_Registration_Certificate_27AAACB.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -244,7 +244,7 @@ Jurisdictional Authority: Assistant Commissioner of State Tax, Division IV, Pune
   },
   {
     id: 'doc-b-05',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'ISO_9001_2015_Accredited_Cert.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -275,7 +275,7 @@ Issuing Registrar: Premier Certification Services Ltd (NABCB Reg: QM-042)`
   },
   {
     id: 'doc-b-06',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'NABL_Test_Report_SafetyEquipment.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -309,7 +309,7 @@ TEST OBSERVATIONS & EMPIRICAL LABORATORY FINDINGS:
   },
   {
     id: 'doc-b-07',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'Make_In_India_Class1_Affidavit.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -336,7 +336,7 @@ Solemnly affirmed before me: Adv. R. S. Deshmukh, Notary Public (Reg: MH/NOT/201
   },
   {
     id: 'doc-b-08',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'MSME_Udyam_Registration_MH33D.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -359,7 +359,7 @@ Pursuant to Rule 170(i) of General Financial Rules (GFR), 2017 and GeM GTC Claus
   },
   {
     id: 'doc-b-09',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'Company_Profile_Factory_License.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -386,7 +386,7 @@ Quality Control Testing Laboratory: Equipped with Universal Testing Machine (UTM
   },
   {
     id: 'doc-b-10',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     fileName: 'Warranty_Undertaking_Letter.pdf',
     category: 'bidder',
     type: 'PDF',
@@ -420,7 +420,7 @@ Vikramaditya Sharma, Managing Director (DIN: 09812401)`
 export const DEMO_REQUIREMENTS: Requirement[] = [
   {
     id: 'req-01',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Financial',
     title: 'Minimum Annual Turnover',
     requirement: 'Bidder must have an average annual turnover of at least ₹10.00 crore in the last 3 financial years (FY 2022-23, FY 2023-24, FY 2024-25).',
@@ -433,7 +433,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-02',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Experience',
     title: 'Years of Experience in Industrial Safety Equipment',
     requirement: 'Bidder must have at least 5 years of continuous commercial experience in manufacturing/supplying industrial safety equipment to Central/State PSUs or Government Bodies.',
@@ -446,7 +446,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-03',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Certification',
     title: 'ISO 9001:2015 Quality Management',
     requirement: 'Bidder must hold a valid ISO 9001:2015 accredited Quality Management System certification covering the scope of industrial PPE manufacture.',
@@ -459,7 +459,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-04',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Technical',
     title: 'Waterproof & Ingress Protection Rating IP68',
     requirement: 'Sensor-enabled smart safety helmets must possess IP68 waterproof ingress protection certification under IEC 60529 tested by an accredited laboratory.',
@@ -472,7 +472,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-05',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Experience',
     title: 'Large-Scale Single Project Execution (₹2.50 Cr)',
     requirement: 'Bidder must demonstrate execution of at least one single order for industrial PPE valued at not less than ₹2.50 crore in the preceding 3 years.',
@@ -485,7 +485,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-06',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Technical',
     title: 'Flame Retardant Protective Coverall Compliance',
     requirement: 'Coverall fabric must be certified compliant with IS 15841 / EN ISO 11612 (Protective clothing against heat and flame).',
@@ -498,7 +498,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-07',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Legal/Regulatory',
     title: 'Make in India (MII) Preference Local Content > 50%',
     requirement: 'Bidder must qualify as Class-I Local Supplier having minimum 50% local domestic value addition in accordance with DPIIT Order P-45021/2/2017-PP (BE-II).',
@@ -511,7 +511,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-08',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Eligibility',
     title: 'Valid Active GSTIN in State of Execution',
     requirement: 'Bidder must possess a valid, active GST registration with regular tax compliance status.',
@@ -524,7 +524,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-09',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Financial',
     title: 'Bid Security / EMD Exemption Verification',
     requirement: 'Bidder must submit EMD of ₹5,00,000 or a valid statutory exemption certificate (Udyam / NSIC / Startup India recognition).',
@@ -537,7 +537,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-10',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Technical',
     title: 'High-Altitude Harness Tensile Breaking Strength > 850 MPa',
     requirement: 'Full body harness webbings and D-rings must exhibit minimum tensile breaking strength exceeding 850 MPa according to IS 3521 part 1.',
@@ -550,7 +550,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-11',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Delivery',
     title: 'Maximum Delivery Schedule Within 45 Days',
     requirement: 'Complete delivery of the ordered lot must be completed at NTPC Dadri stores within 45 days from date of GeM Contract generation.',
@@ -563,7 +563,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-12',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Other',
     title: 'On-Site Technical SLA & 4-Hour Response Time',
     requirement: 'Bidder must guarantee on-site technical support within 4 hours of notification for emergency safety gear replacements within a 50km radius.',
@@ -576,7 +576,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-13',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Certification',
     title: 'ISO 45001:2018 Occupational Health & Safety',
     requirement: 'Bidder or OEM manufacturer must hold valid ISO 45001:2018 certification for occupational workplace safety management.',
@@ -589,7 +589,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-14',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Documentation',
     title: 'Manufacturer Authorization Form (MAF / Annexure IV)',
     requirement: 'Non-OEM bidders must submit OEM authorization in prescribed format (Annexure IV) with explicit commitment to honor warranty and spare parts.',
@@ -602,7 +602,7 @@ export const DEMO_REQUIREMENTS: Requirement[] = [
   },
   {
     id: 'req-15',
-    projectId: 'proj-sih26100-demo',
+    projectId: 'proj-gem-demo',
     category: 'Financial',
     title: 'Bank Solvency Certificate (₹3.00 Cr)',
     requirement: 'Solvency certificate of at least ₹3.00 crore issued by a Scheduled Commercial Bank, dated not earlier than 6 months prior to bid opening.',

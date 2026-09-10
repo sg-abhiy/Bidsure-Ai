@@ -110,7 +110,7 @@ export const SummaryCards: React.FC<SummaryCardsProps> = ({
               {getStatusBadge()}
               {project.isDemo && (
                 <span className="text-xs font-semibold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded border border-sky-200">
-                  SIH26100 Reference Case
+                  Sample Reference Case
                 </span>
               )}
             </div>

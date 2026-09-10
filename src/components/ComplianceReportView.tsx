@@ -137,7 +137,7 @@ export const ComplianceReportView: React.FC<ComplianceReportViewProps> = ({
             Bid Compliance Verification & Evidence Traceability Report
           </h1>
           <p className="text-xs text-slate-600">
-            Prepared under Smart India Hackathon (SIH26100) Integrated GeM Bid Compliance Framework
+            Prepared under Integrated GeM & Enterprise Bid Compliance Verification Framework
           </p>
         </div>
 

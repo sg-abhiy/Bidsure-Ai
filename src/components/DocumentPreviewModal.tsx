@@ -375,7 +375,7 @@ export const DocumentPreviewModal: React.FC<DocumentPreviewModalProps> = ({
                   <span>•</span>
                   <span>Registration: 27AAACB9812M1Z5</span>
                   <span>•</span>
-                  <span>Dossier: SIH26100-AUDIT</span>
+                  <span>Dossier: GEM-PROC-AUDIT</span>
                 </div>
               </div>
 
