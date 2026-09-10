@@ -19,12 +19,16 @@ interface ComplianceMatrixProps {
   complianceResults: ComplianceResult[];
   onViewEvidence: (result: ComplianceResult) => void;
   onExplainItem?: (result: ComplianceResult) => void;
+  onRunCheck?: () => void;
+  isChecking?: boolean;
 }
 
 export const ComplianceMatrix: React.FC<ComplianceMatrixProps> = ({
   complianceResults,
   onViewEvidence,
   onExplainItem,
+  onRunCheck,
+  isChecking = false,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
@@ -183,16 +187,31 @@ export const ComplianceMatrix: React.FC<ComplianceMatrixProps> = ({
             </p>
           </div>
 
-          {/* Search bar */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Search clause, value, or document..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-amber-500 text-slate-800"
-            />
+          {/* Action buttons & Search bar */}
+          <div className="flex flex-wrap items-center gap-2">
+            {onRunCheck && (
+              <button
+                onClick={onRunCheck}
+                disabled={isChecking}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 hover:bg-slate-800 disabled:opacity-50 text-white rounded-lg text-xs font-bold transition-all cursor-pointer shadow-xs shrink-0"
+                title="Run or re-evaluate compliance check for this project"
+              >
+                <Sparkles className={`w-3.5 h-3.5 ${isChecking ? 'animate-spin' : 'text-amber-400'}`} />
+                <span>{isChecking ? 'Checking Compliance...' : 'Run Compliance Check'}</span>
+              </button>
+            )}
+
+            {/* Search bar */}
+            <div className="relative w-full md:w-64">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                placeholder="Search clause, value, or document..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-white pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-amber-500 text-slate-800"
+              />
+            </div>
           </div>
         </div>
 
@@ -304,11 +323,21 @@ export const ComplianceMatrix: React.FC<ComplianceMatrixProps> = ({
                       ? 'No requirements extracted yet'
                       : 'No matching requirements found'}
                   </p>
-                  <p className="text-xs text-slate-400 mt-0.5">
+                  <p className="text-xs text-slate-400 mt-0.5 max-w-md mx-auto mb-4">
                     {complianceResults.length === 0
-                      ? 'Upload tender documents and bidder dossiers in the Documents tab to run automated compliance extraction'
-                      : 'Try clearing your category filter or search query'}
+                      ? 'Click below to extract tender clauses and evaluate compliance against submitted bidder documentation.'
+                      : 'Try clearing your category filter or search query.'}
                   </p>
+                  {complianceResults.length === 0 && onRunCheck && (
+                    <button
+                      onClick={onRunCheck}
+                      disabled={isChecking}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-slate-950 rounded-lg text-xs font-bold transition-all shadow-xs cursor-pointer"
+                    >
+                      <Sparkles className={`w-4 h-4 ${isChecking ? 'animate-spin' : ''}`} />
+                      <span>{isChecking ? 'Evaluating Compliance...' : 'Run Compliance Check Now'}</span>
+                    </button>
+                  )}
                 </td>
               </tr>
             ) : (

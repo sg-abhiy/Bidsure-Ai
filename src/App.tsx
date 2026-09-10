@@ -243,12 +243,7 @@ export default function App() {
   const handleAnalyzeBidder = async () => {
     setIsAnalyzingBidder(true);
     try {
-      const res = await fetch(`/api/projects/${selectedProject.id}/analyze-bidder`, {
-        method: 'POST',
-      });
-      if (res.ok) {
-        await handleRunComplianceCheck();
-      }
+      await handleRunComplianceCheck();
     } catch (err) {
       console.error('Error analyzing bidder:', err);
     } finally {
@@ -600,6 +595,8 @@ export default function App() {
               complianceResults={complianceResults}
               onViewEvidence={(item) => setActiveEvidenceItem(item)}
               onExplainItem={handleExplainItem}
+              onRunCheck={handleRunComplianceCheck}
+              isChecking={isCheckingCompliance}
             />
           </div>
         )}
@@ -610,6 +607,8 @@ export default function App() {
               complianceResults={complianceResults}
               onViewEvidence={(item) => setActiveEvidenceItem(item)}
               onExplainItem={handleExplainItem}
+              onRunCheck={handleRunComplianceCheck}
+              isChecking={isCheckingCompliance}
             />
           </div>
         )}
