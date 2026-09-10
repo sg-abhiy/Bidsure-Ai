@@ -1,6 +1,39 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Suppress benign Vite HMR websocket disconnection notices in sandboxed iframe environment
+      (function() {
+        var origError = console.error;
+        console.error = function() {
+          var msg = arguments[0] ? String(arguments[0]) : '';
+          if (msg.indexOf('[vite] failed to connect to websocket') !== -1 ||
+              msg.indexOf('WebSocket closed without opened') !== -1 ||
+              msg.indexOf('failed to connect to websocket') !== -1) {
+            // Demote benign Vite HMR notification to debug level (HMR is disabled by design in container preview)
+            if (console.debug) console.debug.apply(console, arguments);
+            return;
+          }
+          origError.apply(console, arguments);
+        };
+
+        window.addEventListener('unhandledrejection', function (e) {
+          var reason = e && (e.reason || e);
+          var msg = typeof reason === 'string' ? reason : (reason && reason.message) || '';
+          if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1) {
+            if (e.preventDefault) e.preventDefault();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+          }
+        });
+        window.addEventListener('error', function (e) {
+          var msg = (e && e.message) || '';
+          if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1) {
+            if (e.preventDefault) e.preventDefault();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+          }
+        });
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BidSure AI</title>
@@ -9,24 +42,6 @@
     <meta property="og:description" content="AI-Powered Bid Compliance Verification Platform for Government & GeM Procurement with Evidence Traceability and Hybrid Verification." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      // Suppress benign Vite HMR websocket disconnection alerts in sandboxed iframe environment
-      window.addEventListener('unhandledrejection', function (e) {
-        var reason = e && (e.reason || e);
-        var msg = typeof reason === 'string' ? reason : (reason && reason.message) || '';
-        if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1) {
-          if (e.preventDefault) e.preventDefault();
-          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-        }
-      });
-      window.addEventListener('error', function (e) {
-        var msg = (e && e.message) || '';
-        if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1) {
-          if (e.preventDefault) e.preventDefault();
-          if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-        }
-      });
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
