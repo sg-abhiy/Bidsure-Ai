@@ -1,0 +1,7 @@
+{
+  "name": "BidSure AI",
+  "description": "AI-Powered Bid Compliance Verification Platform for Government & GeM Procurement with Evidence Traceability and Hybrid Verification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

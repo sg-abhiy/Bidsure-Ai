@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@media print {
+  /* Reset body, root container, and layout backgrounds to clean white */
+  html,
+  body,
+  #root,
+  #root > div,
+  main {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide app navigation, header, footer, action bars, toolbars, and extraneous buttons */
+  nav,
+  header,
+  footer,
+  .print\:hidden,
+  button:not(.print-include),
+  [role="dialog"] > div:first-child:not(.printable-modal-content) {
+    display: none !important;
+  }
+
+  /* Ensure the printable report container occupies full page without margins */
+  .printable-report-canvas {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Clean table pagination and layout */
+  table {
+    width: 100% !important;
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+
+  /* Prevent page breaks inside critical sections */
+  .no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
